@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>ABRB-SMD</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    
+
+  <link href="assets/css/bootstrap.css" rel="stylesheet" />
+  <link href="assets/css/rubick.css" rel="stylesheet"/>
+  <link href="assets/css/custom.css" rel="stylesheet"/>
+  <link href="assets/css/rubick.css" rel="stylesheet"/>
+<link href="assets/css/custom.css" rel="stylesheet"/> <!-- your overrides -->
+
+  <!--     Fonts and icons     -->
+  <!-- Font Awesome for icons -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Roboto (Army standard primary font) -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap" rel="stylesheet">
+
+<!-- Icon fonts -->
+<link href="assets/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
+
+<!-- (Optional) Remove Rubik if not needed -->
+<!-- <link href="assets/css/fonts/Rubik-Fonts.css" rel="stylesheet" /> -->
+
+</head>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".protected-link");
+  
+    links.forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+  
+        const correctPassword = this.getAttribute("data-password");
+        const file = this.getAttribute("data-file");
+  
+        const entered = prompt("Enter password for this packet:");
+  
+        if (entered === null) return; // user canceled
+        if (entered === correctPassword) {
+          window.location.href = file;
+        } else {
+          alert("Incorrect password. Please try again.");
+        }
+      });
+    });
+  });
+  </script>
+
+<body id="skrollr-body">
+  <div class="loading ">
+  <div class="loading-container">
+    <p>Just a sec...</p>
+    <img class="loader" src="assets/img/rubik.svg"/>
+    
+  </div>
+</div>
+  <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
+  <nav class="navbar navbar-default navbar-transparent navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar bar1"></span>
+          <span class="icon-bar bar2"></span>
+          <span class="icon-bar bar3"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">ABRB</a>
+      </div>
+  
+      <div id="example" class="navbar-scroll-to collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right abr-nav">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="recruiters.html">RECRUITERS</a></li>
+          <li><a href="music.html">MUSIC</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    
+  <div class="wrapper">
+    <div class="section section-header">
+      <div class="parallax pattern-image filter filter-color-4">
+          <img src="assets/img/yellow_background.jpeg"/>
+
+          <div class="container"> 
+            <div class="content content-with-opacity">
+                <p><span></span></p>
+                <h1 class="responsive-small"></h1>
+                <div class="separator-container">
+                    
+                </div>            
+                <h5></h5>
+            </div>   
+        </div>
+      </div>
+      
+    </div>
+    <div class="section section-we-are-1" id="whoWeAre">
+      <div class="text-area">
+        <div class="container">
+          <div class="row">
+            <div  class="title add-animation">
+                <p>&nbsp;</p>
+              <h2>ARMY BANDS RECRUITING BRANCH<br>RESOURCES</h2>
+              <div class="separator-container">
+                <div class="separator line-separator">⌘</div>
+              </div>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </div>          
+        </div>
+      </div>  
+      <div id="carousel">
+        <div id="carousel-example-generic" class="carousel slide add-animation animation-1" data-interval="false">
+
+            <div id="carousel">
+                <div id="carousel-example-generic" class="carousel slide add-animation animation-1" data-interval="false">
+                  <!-- (your slides go here) -->
+                </div>
+              </div>
+
+ <!-- BUTTONS -->
+
+
+
+<!-- ===== Minimal Reel-style Player (Play/Stop only) ===== -->
+<div class="rc-player" id="filmReelPlayer" role="region" aria-label="Audio Player" style="max-width:900px;margin:40px auto;background:#fff;padding:16px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.1);">
+  <!-- Hero waveform (current track only) -->
+  <canvas class="rc-wave-hero" aria-label="Waveform seek area"></canvas>
+
+  <div class="rc-body">
+    <div class="rc-controls" aria-label="Playback controls">
+      <button class="rc-btn rc-playstop" aria-label="Play">►</button>
+
+      <div class="rc-timing">
+        <span class="rc-time rc-time--current" aria-label="Elapsed">0:00</span>
+        <span class="rc-time rc-time--duration" aria-label="Duration">0:00</span>
+      </div>
+
+      <div class="rc-volume" aria-label="Volume">
+        <input class="rc-vol" type="range" min="0" max="1" step="0.01" value="0.9" aria-label="Volume slider">
+      </div>
+    </div>
+
+    <ol class="rc-list" aria-label="Track list"></ol>
+  </div>
+
+  <audio preload="metadata" crossorigin="anonymous"></audio>
+</div>
+
+<style>
+  :root{ --rc-accent:#a67c52; --rc-accent-2:#b8c46c; --rc-sub:#666; --rc-muted:#eee; }
+
+  .rc-wave-hero{
+    width:100%; height:80px; display:block; margin-bottom:12px;
+    background:linear-gradient(180deg,#faf8f6,#fff);
+    border-radius:10px; box-shadow:inset 0 0 0 1px #f0ede9;
+    cursor:pointer;
+  }
+
+  /* Controls: Play/Stop | timing | volume */
+  .rc-controls{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    gap:12px;
+    align-items:center;
+    padding:10px 8px 6px;
+  }
+  .rc-btn{background:var(--rc-accent);color:#fff;border:none;border-radius:999px;padding:12px 18px;font-size:18px;cursor:pointer}
+  .rc-timing{display:flex;gap:12px;align-items:center;justify-self:start}
+  .rc-time{font-variant-numeric:tabular-nums;font-size:12px;color:var(--rc-sub)}
+  .rc-volume{display:flex;align-items:center;justify-self:end}
+  .rc-vol{appearance:none;width:140px;height:6px;background:var(--rc-muted);border-radius:999px}
+  .rc-vol::-webkit-slider-thumb{appearance:none;width:14px;height:14px;border-radius:50%;background:var(--rc-accent)}
+  .rc-vol::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--rc-accent);border:0}
+
+  .rc-list{margin:8px 0 0;padding:0;list-style:none;border-top:1px solid #f0f0f0;max-height:420px;overflow:auto}
+  .rc-track{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:12px 4px;border-bottom:1px solid #f0f0f0;cursor:pointer}
+  .rc-track:hover{background:#faf9f8}
+  .rc-title{margin:0;font-size:14px}
+  .rc-dur{font-size:12px;color:var(--rc-sub);margin-right:8px}
+  .rc-track--active{background:linear-gradient(90deg, rgba(166,124,82,.12), transparent)}
+
+  @media(max-width:640px){
+    .rc-wave-hero{height:96px}
+  }
+</style>
+
+<script>
+(function () {
+  const el = document.getElementById('filmReelPlayer');
+  const audio = el.querySelector('audio');
+  const waveHero = el.querySelector('.rc-wave-hero');
+
+  // Your tracks (edit paths/titles as needed)
+  const tracks = [
+    { title: 'Honor (48K, 114Bbm, 16bit")', src: 'assets/audio/Honor/Honor.mp3' },
+    
+  ];
+
+  // Refs
+  const playStopBtn = el.querySelector('.rc-playstop');
+  const timeNow   = el.querySelector('.rc-time--current');
+  const timeDur   = el.querySelector('.rc-time--duration');
+  const volSlider = el.querySelector('.rc-vol');
+  const listEl    = el.querySelector('.rc-list');
+
+  let index = 0;
+  let seeking = false;
+
+  // Lazy AudioContext + caches
+  let AC = null;
+  const waveCache = new Map();  // src -> peaks Float32Array
+
+  const fmt = s => { if (!isFinite(s)) return '0:00'; const m=Math.floor(s/60), r=Math.floor(s%60); return `${m}:${r<10?'0':''}${r}`; };
+
+  // Build list (title + duration only)
+  tracks.forEach((t, i) => {
+    const li = document.createElement('li');
+    li.className = 'rc-track' + (i===0 ? ' rc-track--active' : '');
+    li.dataset.index = i; li.dataset.src = t.src;
+
+    const title = document.createElement('p'); title.className = 'rc-title'; title.textContent = t.title;
+    const dur = document.createElement('span'); dur.className='rc-dur'; dur.textContent='--:--';
+
+    li.appendChild(title); li.appendChild(dur);
+    listEl.appendChild(li);
+
+    const temp = new Audio(); temp.src = t.src;
+    temp.addEventListener('loadedmetadata', () => dur.textContent = fmt(temp.duration));
+  });
+
+  function setActive(i){
+    [...listEl.children].forEach(li => li.classList.remove('rc-track--active'));
+    const li = listEl.children[i]; if (li) li.classList.add('rc-track--active');
+  }
+
+  function load(i, autoplay=false){
+    index = (i + tracks.length) % tracks.length;
+    const t = tracks[index];
+    audio.src = t.src;
+    audio.load();
+    setActive(index);
+    ensureWaveform(index).catch(()=>{});
+    updateProgress(); // reset times + hero tint to 0
+    if (autoplay) audio.play().catch(()=>{});
+    updatePlayStopIcon();
+  }
+
+  function updatePlayStopIcon(){
+    // ► when idle/paused at 0; ❚❚ when playing; ■ when paused mid-track
+    if (!audio.paused) { playStopBtn.textContent = '❚❚'; playStopBtn.setAttribute('aria-label','Pause'); return; }
+    if (audio.currentTime > 0) { playStopBtn.textContent = '■'; playStopBtn.setAttribute('aria-label','Stop'); }
+    else { playStopBtn.textContent = '►'; playStopBtn.setAttribute('aria-label','Play'); }
+  }
+
+  function stopPlayback(){
+    audio.pause();
+    audio.currentTime = 0;
+    updateProgress();
+    updatePlayStopIcon();
+  }
+
+  function updateProgress(){
+    timeNow.textContent = fmt(audio.currentTime);
+    timeDur.textContent = fmt(audio.duration);
+    const peaks = waveCache.get(tracks[index].src);
+    if (peaks) drawPeaks(waveHero, peaks, (audio.currentTime / (audio.duration || 1)));
+  }
+
+  // Waveform (on-demand for the active track)
+  async function ensureWaveform(i){
+    const src = tracks[i].src;
+    const cached = waveCache.get(src);
+    if (cached){ drawPeaks(waveHero, cached, 0); return; }
+
+    if (!AC){ AC = new (window.AudioContext || window.webkitAudioContext)(); }
+
+    // tiny loading stripe
+    const ctx2d = waveHero.getContext('2d');
+    ctx2d.clearRect(0,0,waveHero.width,waveHero.height);
+    ctx2d.fillStyle = '#eae7e3'; ctx2d.fillRect(0,0,waveHero.width,waveHero.height);
+    ctx2d.fillStyle = '#a67c52'; ctx2d.fillRect(0,waveHero.height/2-2, waveHero.width*0.15, 4);
+
+    const arrayBuf = await fetch(src, {mode:'cors'}).then(r => r.arrayBuffer());
+    const audioBuf = await AC.decodeAudioData(arrayBuf);
+    const mono = mixToMono(audioBuf);
+    const peaks = downsamplePeaks(mono, 1600); // high-res; sub-sampled to canvas width
+    waveCache.set(src, peaks);
+    drawPeaks(waveHero, peaks, 0);
+  }
+
+  function mixToMono(buffer){
+    const ch0 = buffer.getChannelData(0);
+    if (buffer.numberOfChannels === 1) return ch0;
+    const ch1 = buffer.getChannelData(1);
+    const mono = new Float32Array(ch0.length);
+    for (let i=0;i<ch0.length;i++) mono[i] = (ch0[i] + ch1[i]) * 0.5;
+    return mono;
+  }
+
+  function downsamplePeaks(channelData, samples){
+    const block = Math.floor(channelData.length / samples) || 1;
+    const peaks = new Float32Array(samples);
+    for (let i=0;i<samples;i++){
+      let start = i*block, end = Math.min(start+block, channelData.length);
+      let max = 0;
+      for (let j=start;j<end;j++){
+        const v = Math.abs(channelData[j]);
+        if (v>max) max=v;
+      }
+      peaks[i]=max;
+    }
+    return peaks;
+  }
+
+  function drawPeaks(canvas, peaks, playedPct){
+    const dpr = window.devicePixelRatio || 1;
+    const cssW = canvas.clientWidth  || 600;
+    const cssH = canvas.clientHeight || 80;
+    canvas.width  = Math.round(cssW * dpr * 2); // oversample horizontally for crisp bars
+    canvas.height = Math.round(cssH * dpr);
+
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    const w = canvas.width, h = canvas.height, mid = Math.floor(h/2);
+    const bars = Math.min(peaks.length, Math.floor(w/2));
+    const step = peaks.length / bars;
+
+    const fg = '#a67c52', bg = '#eae7e3', played = '#c49a6c';
+
+    // baseline
+    ctx.fillStyle = bg; ctx.fillRect(0, mid-1, w, 2);
+
+    // bars
+    for (let i=0;i<bars;i++){
+      const p = peaks[Math.floor(i*step)] || 0;
+      const amp = Math.max(2, Math.min(mid-2, Math.round(p * (mid-2))));
+      const x = i*2 + 1;
+      const y = mid - amp;
+      const pct = i / bars;
+      ctx.fillStyle = (pct <= playedPct) ? played : fg;
+      ctx.fillRect(x, y, 1, amp*2);
+    }
+  }
+
+  // Controls: a single Play/Stop button
+  playStopBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      // If paused at start, play; if paused mid-track, resume
+      audio.play().catch(()=>{});
+    } else {
+      // Stop means pause and reset to 0
+      stopPlayback();
+    }
+  });
+
+  audio.addEventListener('play',  updatePlayStopIcon);
+  audio.addEventListener('pause', updatePlayStopIcon);
+  audio.addEventListener('timeupdate', updateProgress);
+  audio.addEventListener('loadedmetadata', updateProgress);
+
+  // When a track ends, stay on the same track and show Play icon
+  audio.addEventListener('ended', () => { stopPlayback(); });
+
+  // Seek by clicking/dragging on the hero waveform
+  const seekFromCanvas = (clientX) => {
+    const rect = waveHero.getBoundingClientRect();
+    const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+    const pct = x / rect.width;
+    audio.currentTime = pct * (audio.duration || 0);
+    updateProgress();
+  };
+  waveHero.addEventListener('mousedown', (e) => { seeking = true; seekFromCanvas(e.clientX); });
+  document.addEventListener('mousemove', (e) => { if (seeking) seekFromCanvas(e.clientX); });
+  document.addEventListener('mouseup',   () => seeking = false);
+
+  // Volume
+  volSlider.addEventListener('input', () => { audio.volume = parseFloat(volSlider.value); });
+
+  // Click a track to load it (autoplay)
+  listEl.addEventListener('click', (e) => {
+    const li = e.target.closest('.rc-track'); if (!li) return;
+    load(parseInt(li.dataset.index, 10), /*autoplay*/ true);
+  });
+
+  // Redraw hero waveform on resize (from cache)
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    if (resizeTimer) cancelAnimationFrame(resizeTimer);
+    resizeTimer = requestAnimationFrame(() => {
+      const peaks = waveCache.get(tracks[index].src);
+      if (peaks) drawPeaks(waveHero, peaks, (audio.currentTime/(audio.duration||1)) );
+    });
+  });
+
+  // Init
+  audio.volume = parseFloat(volSlider.value);
+  load(0, /*autoplay*/ false);
+})();
+</script>
+<!-- ===== /Minimal Reel-style Player (Play/Stop only) ===== -->
+
+
+
+<!-- Honor Download Section -->
+<div class="text-center" style="margin:30px 0;">
+  <button id="honorBtn" class="btn btn-lg btn-black">
+    HONOR - DOWNLOAD <i class="fa fa-download"></i>
+  </button>
+</div>
+
+<!-- Hidden modal-like form -->
+<div id="honorForm" style="display:none; max-width:500px; margin:20px auto; background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.15); font-family:'Roboto',sans-serif;">
+  <h4 style="margin-bottom:15px;">Before Download</h4>
+  
+  <div class="form-group">
+    <label>1. What unit are you in?</label>
+    <input type="text" id="unit" class="form-control" required>
+  </div>
+  
+  <div class="form-group">
+    <label>2. What is your email?</label>
+    <input type="email" id="email" class="form-control" required>
+  </div>
+  
+  <div class="form-group">
+    <label>3. What will you use the video for?</label>
+    <textarea id="purpose" class="form-control" rows="3" required></textarea>
+  </div>
+  
+  <button id="submitHonor" class="btn btn-lg btn-black" style="width:100%; margin-top:10px;">
+    Submit & Download <i class="fa fa-download"></i>
+  </button>
+</div>
+
+<script>
+document.getElementById("honorBtn").addEventListener("click", function(){
+  document.getElementById("honorForm").style.display = "block";
+});
+
+document.getElementById("submitHonor").addEventListener("click", function(){
+  const unit = document.getElementById("unit").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const purpose = document.getElementById("purpose").value.trim();
+
+  if(!unit || !email || !purpose){
+    alert("Please complete all fields before downloading.");
+    return;
+  }
+
+  // optional: you could log these values somewhere with backend code
+  
+  // trigger download
+  window.location.href = "assets/audio/Honor/HONOR AUDIO FOUO.zip";
+});
+</script>
+
+
+<style>
+    /* Style all buttons */
+    .btn {
+      background-color: #FFCC00 !important;  /* Army yellow */
+      color: #000 !important;                /* Black text for contrast */
+      border: none;
+      border-radius: 12px;                   /* Rounded corners */
+      padding: 12px 24px;                    /* Balanced size */
+      font-family: 'Roboto', sans-serif;     /* Army standard font */
+      font-weight: 700;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+  
+    /* Hover effect */
+    .btn:hover {
+      background-color: #e6b800 !important;  /* Darker Army yellow */
+      transform: translateY(-2px);
+    }
+  
+    /* Make sure contact form "SEND" button also matches */
+    .btn-contact {
+      background-color: #FFCC00 !important;
+      color: #000 !important;
+      border-radius: 12px;
+    }
+
+    
+  /* Template dropdown menu */
+  .template-dropdown {
+    min-width: 260px;
+    padding: 10px 12px;
+    text-align: left;
+  }
+  .template-dropdown > li > a {
+    margin: 6px 0;
+    border: 2px solid #000;
+    border-radius: 8px;
+    background: #FFCC00;
+    color: #000 !important;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    padding: 8px 12px;
+    transition: background-color .2s ease, transform .15s ease;
+  }
+  .template-dropdown > li > a:hover,
+  .template-dropdown > li > a:focus {
+    background: #e6b800;
+    color: #000 !important;
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+  .template-dropdown .dropdown-header {
+    font-weight: 700;
+    color: #555;
+    padding: 6px 12px 4px;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+  }
+</style>
+  
+
+
+ <!-- END BUTTONS -->
+   
+   <div class="section section-contact-2" id="contact">
+        <div class="container">   
+          <div class="text-area">
+              <div class="title add-animation">
+                  <h2>REQUEST FOR CUSTOM SCORE</h2>
+                  <div class="separator-container">
+                    <div class="separator line-separator">⌘</div>
+                  </div>
+                  
+              </div>
+          </div>
+          <div class="contact-form">
+              <div class="row">
+                  <div class="col-md-4">
+                      <div class="form-group add-animation animation-1">
+                        <label>Your Full Name</label>
+                        <input type="text" value="" placeholder="Rank, Last, First" class="form-control">
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="form-group add-animation animation-2">
+                          <label>Your Email</label>
+                          <input type="text" value="" placeholder="michael.j@gmail.com" class="form-control">
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="form-group add-animation animation-3">
+                          <label>Subject</label>
+                          <input type="text" value="" placeholder="Video Request" class="form-control">
+                      </div>
+                  </div>
+                  <div class="col-md-12">
+                      <div class="form-group add-animation animation-1">
+                          <textarea class="form-control" placeholder="Iclude your command and purpose of the video." rows="8"></textarea>
+                      </div>
+                  <div>
+                  
+                       
+                       <button class="btn btn-lg btn-black btn-contact" style="width:400px;">
+                        SEND <i class="fa fa-paper-plane"></i>
+                      </button>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+  </div> <!-- end wrapper -->
+
+</div>  <!-- ===== START FOOTER (Full-Width Contact Block) ===== -->
+<!-- ===== START FOOTER (Compact Version) ===== -->
+<footer class="footer-custom" role="contentinfo">
+  <div class="container text-center">
+    <h4 class="footer-title">CONTACT</h4>
+    <div class="separator line-separator">⌘</div>
+
+    <p class="footer-text">Army Bands Recruiting Branch</p>
+    <p class="footer-text">Phone: (502) 528-2100</p>
+    <p class="footer-text">
+      Email: 
+      <a href="mailto:youremail@example.com">owen.r.eddy.mil@army.mil</a>
+    </p>
+    <p class="footer-text">1307 3rd Ave Ft Knox, Ky 40121</p>
+
+    <p class="footer-copy">&copy; 2025</p>
+  </div>
+</footer>
+
+<!-- Footer Styles -->
+<style>
+  .footer-custom {
+    background: #FFCC00;          /* Army yellow */
+    padding: 20px 10px;           /* much smaller padding */
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+  }
+
+  .footer-title {
+    margin: 0 0 8px;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .footer-text {
+    margin: 2px 0;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .footer-text a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .footer-copy {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #333;
+  }
+
+  .line-separator {
+    margin: 6px auto 12px;
+  }
+</style>
+<!-- ===== END FOOTER ===== -->
+
+</body>
+   <!--   core js files    -->
+   <script src="assets/js/jquery-1.11.2.min.js" type="text/javascript"></script>
+   <script src="assets/js/bootstrap.js" type="text/javascript"></script>
+    
+    <!--   file for adding vertical points where we activate the elements animation   -->
+    <script type="text/javascript" src="assets/js/jquery.waypoints.min.js"></script>
+
+    <!--  js library for devices recognition -->
+    <script type="text/javascript" src="assets/js/modernizr.js"></script>
+    
+    <!--   file where we handle all the script from the Rubik page   -->
+    <script type="text/javascript" src="assets/js/rubick.js"></script>
+    
+    <!--  script for google maps     -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+
+
+<!-- ===== END FOOTER ===== -->
+<style>
+  /* Navbar link overrides */
+  .navbar-nav > li > a {
+    color: #000 !important;       /* Black text */
+    font-size: 18px !important;   /* Larger font size */
+    font-weight: 700;             /* Bold for visibility */
+    text-transform: uppercase;    /* Optional: make them ALL CAPS */
+  }
+
+  /* Brand name (ABRB) */
+  .navbar-brand {
+    color: #000 !important;       /* Black text */
+    font-size: 22px !important;   /* Larger brand text */
+    font-weight: 900;             /* Extra bold */
+  }
+
+  /* Hover effect */
+  .navbar-nav > li > a:hover,
+  .navbar-brand:hover {
+    color: #e6b800 !important;    /* Dark Army yellow on hover */
+    text-decoration: none;
+  }
+</style>
+</html>

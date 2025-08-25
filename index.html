@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>ABRB-SMD</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    
+
+  <link href="assets/css/bootstrap.css" rel="stylesheet" />
+  <link href="assets/css/rubick.css" rel="stylesheet"/>
+  <link href="assets/css/custom.css" rel="stylesheet"/>
+  <link href="assets/css/rubick.css" rel="stylesheet"/>
+<link href="assets/css/custom.css" rel="stylesheet"/> <!-- your overrides -->
+
+  <!--     Fonts and icons     -->
+  <!-- Font Awesome for icons -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Roboto (Army standard primary font) -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap" rel="stylesheet">
+
+<!-- Icon fonts -->
+<link href="assets/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
+
+<!-- (Optional) Remove Rubik if not needed -->
+<!-- <link href="assets/css/fonts/Rubik-Fonts.css" rel="stylesheet" /> -->
+
+</head>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".protected-link");
+  
+    links.forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+  
+        const correctPassword = this.getAttribute("data-password");
+        const file = this.getAttribute("data-file");
+  
+        const entered = prompt("Enter password for this packet:");
+  
+        if (entered === null) return; // user canceled
+        if (entered === correctPassword) {
+          window.location.href = file;
+        } else {
+          alert("Incorrect password. Please try again.");
+        }
+      });
+    });
+  });
+  </script>
+
+<body id="skrollr-body">
+  <div class="loading ">
+  <div class="loading-container">
+    <p>Just a sec...</p>
+    <img class="loader" src="assets/img/rubik.svg"/>
+    
+  </div>
+</div>
+  <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
+  <nav class="navbar navbar-default navbar-transparent navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar bar1"></span>
+          <span class="icon-bar bar2"></span>
+          <span class="icon-bar bar3"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">ABRB</a>
+      </div>
+  
+      <div id="example" class="navbar-scroll-to collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right abr-nav">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="recruiters.html">RECRUITERS</a></li>
+          <li><a href="music.html">MUSIC</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    
+  <div class="wrapper">
+    <div class="section section-header">
+      <div class="parallax pattern-image filter filter-color-4">
+          <img src="assets/img/yellow_background.jpeg"/>
+
+          <div class="container"> 
+            <div class="content content-with-opacity">
+                <p><span></span></p>
+                <h1 class="responsive-small"></h1>
+                <div class="separator-container">
+                    
+                </div>            
+                <h5></h5>
+            </div>   
+        </div>
+      </div>
+      
+    </div>
+    <div class="section section-we-are-1" id="whoWeAre">
+      <div class="text-area">
+        <div class="container">
+          <div class="row">
+            <div  class="title add-animation">
+                <p>&nbsp;</p>
+              <h2>ARMY BANDS RECRUITING BRANCH<br> RESOURCES</h2>
+              <div class="separator-container">
+                <div class="separator line-separator">⌘</div>
+              </div>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </div>          
+        </div>
+      </div>  
+      <div id="carousel">
+        <div id="carousel-example-generic" class="carousel slide add-animation animation-1" data-interval="false">
+
+            <div id="carousel">
+                <div id="carousel-example-generic" class="carousel slide add-animation animation-1" data-interval="false">
+                  <!-- (your slides go here) -->
+                </div>
+              </div>
+
+
+
+<!-- Button Stack -->
+<div class="button-stack text-center">
+
+  <!-- CONOP TEMPLATES -->
+  <div class="dropdown">
+    <button class="btn btn-lg btn-black dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      CONOP TEMPLATES <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu template-dropdown">
+      <li class="dropdown-header">Download PPTX</li>
+      <li><a href="assets/files/tour_template.pptx" download>Tour CONOP Template</a></li>
+      <li><a href="assets/files/convention_template.pptx" download>Convention CONOP Template</a></li>
+      <li><a href="assets/files/AAR_template.pptx" download>AAR Template</a></li>
+    </ul>
+  </div>
+
+  <!-- AMPA FORMS -->
+  <div class="dropdown">
+    <button class="btn btn-lg btn-black dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      AMPA FORMS <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu template-dropdown">
+      <li class="dropdown-header">Download AMPA Forms (PDF)</li>
+      <li><a href="assets/files/AMPA/9B-trumpet.pdf" download="9B_trumpet.pdf" type="application/pdf"><i class="fa fa-download"></i> 9B Trumpet</a></li>
+    <li><a href="assets/files/AMPA/9E-trombone.pdf" download="9E_trombone.pdf" type="application/pdf"><i class="fa fa-download"></i> 9E Trombone</a></li>
+    <li><a href="assets/files/AMPA/9C-euphonium.pdf" download="9C_euphonium.pdf" type="application/pdf"><i class="fa fa-download"></i> 9C Euphonium</a></li>
+    <li><a href="assets/files/AMPA/9D-french-horn.pdf" download="9D_french_horn.pdf" type="application/pdf"><i class="fa fa-download"></i> 9D French Horn</a></li>
+    <li><a href="assets/files/AMPA/9F-tuba.pdf" download="9F_tuba.pdf" type="application/pdf"><i class="fa fa-download"></i> 9F Tuba</a></li>
+    <li><a href="assets/files/AMPA/9G-flute.pdf" download="9G_flute.pdf" type="application/pdf"><i class="fa fa-download"></i> 9G Flute</a></li>
+    <li><a href="assets/files/AMPA/9H-oboe.pdf" download="9H_oboe.pdf" type="application/pdf"><i class="fa fa-download"></i> 9H Oboe</a></li>
+    <li><a href="assets/files/AMPA/9J-clarinet.pdf" download="9J_clarinet.pdf" type="application/pdf"><i class="fa fa-download"></i> 9J Clarinet</a></li>
+    <li><a href="assets/files/AMPA/9K-bassoon.pdf" download="9K_bassoon.pdf" type="application/pdf"><i class="fa fa-download"></i> 9K Bassoon</a></li>
+    <li><a href="assets/files/AMPA/9L-saxophone.pdf" download="9L_saxophone.pdf" type="application/pdf"><i class="fa fa-download"></i> 9L Saxophone</a></li>
+    <li><a href="assets/files/AMPA/9M-percussion.pdf" download="9M_percussion.pdf" type="application/pdf"><i class="fa fa-download"></i> 9M Percussion</a></li>
+    <li><a href="assets/files/AMPA/9N-keyboard.pdf" download="9N_keyboard.pdf" type="application/pdf"><i class="fa fa-download"></i> 9N Keyboard</a></li>
+    <li><a href="assets/files/AMPA/9T-guitar.pdf" download="9T_guitar.pdf" type="application/pdf"><i class="fa fa-download"></i> 9T Guitar</a></li>
+    <li><a href="assets/files/AMPA/9U-electric-bass.pdf" download="9U_electric_bass.pdf" type="application/pdf"><i class="fa fa-download"></i> 9U Electric Bass</a></li>
+    <li><a href="assets/files/AMPA/9V-vocalist.pdf" download="9V_vocalist.pdf" type="application/pdf"><i class="fa fa-download"></i> 9V Vocalist</a></li>
+    <li><a href="assets/files/AMPA/9X-music-support-technician.pdf" download="9X_music_support_technician.pdf" type="application/pdf"><i class="fa fa-download"></i> 9X Music Support Technician</a></li>
+    </ul>
+  </div>
+
+  <!-- LIVE AUDITION - PART I -->
+  <div class="dropdown">
+    <button class="btn btn-lg btn-black dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Live Audition - Part I <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu template-dropdown">
+      <li class="dropdown-header">Download Live Audition Packets</li>
+      <!-- 9B Trumpet -->
+    <li><a href="assets/files/Part I/Army Trumpet Audition.pdf" download="9B_Trumpet_PartI.pdf" type="application/pdf"><i class="fa fa-download"></i> 9B Trumpet</a></li>
+
+    <!-- 9E Bass Trombone -->
+    <li><a href="assets/files/Part I/Army Bass Trombone Audition.pdf" download="9E_Trombone_PartI.pdf" type="application/pdf"><i class="fa fa-download"></i> 9E Bass Trombone</a></li>
+
+    <!-- 9E Tenor Trombone -->
+    <li><a href="assets/files/Part I/Army Tenor Trombone Audition.pdf" download="9E_Trombone_PartI.pdf" type="application/pdf"><i class="fa fa-download"></i> 9E Bass Trombone</a></li>
+
+    <!-- 9C Euphonium -->
+    <li><a href="assets/files/Part I/Army Euphonium Audition.pdf" download="9C_Euphonium_PartI.pdf" type="application/pdf"><i class="fa fa-download"></i> 9C Euphonium</a></li>
+
+    <!-- 9D Horn -->
+    <li><a href="assets/files/Part I/Army Horn Audition.pdf" download="9D_Horn_PartI.pdf" type="application/pdf"><i class="fa fa-download"></i> 9D French Horn</a></li>
+
+    <!-- 9F Tuba -->
+    <li><a href="assets/files/Part I/Army Tuba Audition.pdf" download="9F_Tuba_PartI.pdf" type="application/pdf"><i class="fa fa-download"></i> 9F Tuba</a></li>
+
+    <!-- 9G Flute -->
+    <li><a href="assets/files/Part I/Army Flute Audition.pdf" download="9G_Flute_PartI.pdf" type="application/pdf"><i class="fa fa-download"></i> 9G Flute</a></li>
+
+    <!-- 9H Oboe -->
+    <li><a href="assets/files/Part I/Army Oboe Audition.pdf" download="9H_Oboe_PartI.pdf" type="application/pdf"><i class="fa fa-download"></i> 9H Oboe</a></li>
+
+    <!-- 9J Clarinet -->
+    <li><a href="assets/files/Part I/Army Clarinet Audition.pdf" download="9J_Clarinet_PartI.pdf" type="application/pdf"><i class="fa fa-download"></i> 9J Clarinet</a></li>
+
+    <!-- 9K Bassoon -->
+    <li><a href="assets/files/Part I/Army Bassoon Audition.pdf" download="9K_Bassoon_PartI.pdf" type="application/pdf"><i class="fa fa-download"></i> 9K Bassoon</a></li>
+
+    <!-- 9L Saxophone -->
+    <li><a href="assets/files/Part I/Army Saxophone Audition.pdf" download="9L_Saxophone_PartI.pdf" type="application/pdf"><i class="fa fa-download"></i> 9L Saxophone</a></li>
+
+    <!-- 9M Percussion (ZIP) -->
+    <li><a href="assets/files/Part I/Army Percussion Audition.pdf" download="9M_Percussion_PartI.zip" type="application/zip"><i class="fa fa-download"></i> 9M Percussion</a></li>
+
+    <!-- 9N Keyboard (ZIP) -->
+    <li><a href="assets/files/Part I/Army Keyboard Audition.pdf" download="9N_Keyboard_PartI.zip" type="application/zip"><i class="fa fa-download"></i> 9N Keyboard</a></li>
+
+    <!-- 9T Guitar (ZIP) -->
+    <li><a href="assets/files/Part I/Army Guitar Audition.pdf" download="9T_Guitar_PartI.zip" type="application/zip"><i class="fa fa-download"></i> 9T Guitar</a></li>
+
+    <!-- 9U Electric Bass (ZIP) -->
+    <li><a href="assets/files/Part I/Army Electric Bass Audition.pdf" download="9U_Bass_PartI.zip" type="application/zip"><i class="fa fa-download"></i> 9U Electric Bass</a></li>
+
+    <!-- 9V Vocalists (ZIP) -->
+    <li><a href="assets/files/Part I/Army Vocal Audition.pdf" download="9V_Female_PartI.zip" type="application/zip"><i class="fa fa-download"></i> 9V Vocalist</a></li>
+    
+    </ul>
+  </div>
+
+ <!-- QPM - Part II (Password Protected) -->
+<div class="dropdown">
+  <button class="btn btn-lg btn-black dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    QPM - Part II <span class="caret"></span>
+  </button>
+
+  <!-- Scrollable dropdown -->
+  <ul class="dropdown-menu template-dropdown scrollable-dropdown">
+    <li class="dropdown-header">Download QPM Packets (PDF/ZIP)</li>
+
+    <!-- 9B Trumpet -->
+    <li><a href="#" class="protected-link" data-password="a1" data-file="assets/files/QPM/9B Trumpet QPM 1.pdf"><i class="fa fa-download"></i> 9B Trumpet Packet 1</a></li>
+    <li><a href="#" class="protected-link" data-password="b1" data-file="assets/files/QPM/9B Trumpet QPM 2.pdf"><i class="fa fa-download"></i> 9B Trumpet Packet 2</a></li>
+
+    <!-- 9C Euphonium -->
+    <li><a href="#" class="protected-link" data-password="a2" data-file="assets/files/QPM/9C Euphonium QPM 1.pdf"><i class="fa fa-download"></i> 9C Euphonium Packet 1</a></li>
+    <li><a href="#" class="protected-link" data-password="b2" data-file="assets/files/QPM/9C Euphonium QPM 2.pdf"><i class="fa fa-download"></i> 9C Euphonium Packet 2</a></li>
+
+    <!-- 9D Horn -->
+    <li><a href="#" class="protected-link" data-password="a3" data-file="assets/files/QPM/9D Horn QPM 1.pdf"><i class="fa fa-download"></i> 9D French Horn Packet 1</a></li>
+    <li><a href="#" class="protected-link" data-password="b3" data-file="assets/files/QPM/9D Horn QPM 2.pdf"><i class="fa fa-download"></i> 9D French Horn Packet 2</a></li>
+
+    <!-- 9E Trombone -->
+    <li><a href="#" class="protected-link" data-password="a4" data-file="assets/files/QPM/9E Bass Trombone QPM 1.pdf"><i class="fa fa-download"></i> 9E Bass Trombone Packet 1</a></li>
+    <li><a href="#" class="protected-link" data-password="b4" data-file="assets/files/QPM/9E Tenor Trombone QPM 1.pdf"><i class="fa fa-download"></i> 9E Tenor Trombone Packet 1</a></li>
+
+    <!-- 9F Tuba -->
+    <li><a href="#" class="protected-link" data-password="a5" data-file="assets/files/QPM/9F Tuba QPM 1.pdf"><i class="fa fa-download"></i> 9F Tuba Packet 1</a></li>
+    <li><a href="#" class="protected-link" data-password="b5" data-file="assets/files/QPM/9F Tuba QPM 2.pdf"><i class="fa fa-download"></i> 9F Tuba Packet 2</a></li>
+
+    <!-- 9G Flute -->
+    <li><a href="#" class="protected-link" data-password="a6" data-file="assets/files/QPM/9G Flute QPM 1.pdf"><i class="fa fa-download"></i> 9G Flute Packet 1</a></li>
+    <li><a href="#" class="protected-link" data-password="b6" data-file="assets/files/QPM/9G Flute QPM 2.pdf"><i class="fa fa-download"></i> 9G Flute Packet 2</a></li>
+
+    <!-- 9H Oboe -->
+    <li><a href="#" class="protected-link" data-password="a7" data-file="assets/files/QPM/9H Oboe QPM 1.pdf"><i class="fa fa-download"></i> 9H Oboe Packet 1</a></li>
+    <li><a href="#" class="protected-link" data-password="b7" data-file="assets/files/QPM/9H Oboe QPM 2.pdf"><i class="fa fa-download"></i> 9H Oboe Packet 2</a></li>
+
+    <!-- 9J Clarinet -->
+    <li><a href="#" class="protected-link" data-password="a8" data-file="assets/files/QPM/9J Clarinet QPM 1.pdf"><i class="fa fa-download"></i> 9J Clarinet Packet 1</a></li>
+    <li><a href="#" class="protected-link" data-password="b8" data-file="assets/files/QPM/9J Clarinet QPM 2.pdf"><i class="fa fa-download"></i> 9J Clarinet Packet 2</a></li>
+
+    <!-- 9K Bassoon -->
+    <li><a href="#" class="protected-link" data-password="a9" data-file="assets/files/QPM/9K Bassoon QPM 1.pdf"><i class="fa fa-download"></i> 9K Bassoon Packet 1</a></li>
+    <li><a href="#" class="protected-link" data-password="b9" data-file="assets/files/QPM/9K Bassoon QPM 2.pdf"><i class="fa fa-download"></i> 9K Bassoon Packet 2</a></li>
+
+    <!-- 9L Saxophone -->
+    <li><a href="#" class="protected-link" data-password="a10" data-file="assets/files/QPM/9L Saxophone QPM 1.pdf"><i class="fa fa-download"></i> 9L Saxophone Packet 1</a></li>
+    <li><a href="#" class="protected-link" data-password="b10" data-file="assets/files/QPM/9L Saxophone QPM 2.pdf"><i class="fa fa-download"></i> 9L Saxophone Packet 2</a></li>
+
+    <!-- 9M Percussion -->
+    <li><a href="#" class="protected-link" data-password="a11" data-file="assets/files/QPM/9M Percussion QPM 1.zip"><i class="fa fa-download"></i> 9M Percussion Packet 1</a></li>
+    <li><a href="#" class="protected-link" data-password="b11" data-file="assets/files/QPM/9M Percussion QPM 2.zip"><i class="fa fa-download"></i> 9M Percussion Packet 2</a></li>
+
+    <!-- 9N Keyboard -->
+    <li><a href="#" class="protected-link" data-password="a12" data-file="assets/files/QPM/9N Keyboard QPM 1.zip"><i class="fa fa-download"></i> 9N Keyboard Packet 1</a></li>
+    <li><a href="#" class="protected-link" data-password="b12" data-file="assets/files/QPM/9N Keyboard QPM 2.zip"><i class="fa fa-download"></i> 9N Keyboard Packet 2</a></li>
+
+    <!-- 9T Guitar -->
+    <li><a href="#" class="protected-link" data-password="a13" data-file="assets/files/QPM/9T Guitar QPM 1.zip"><i class="fa fa-download"></i> 9T Guitar Packet 1</a></li>
+
+    <!-- 9U Bass -->
+    <li><a href="#" class="protected-link" data-password="b13" data-file="assets/files/QPM/9U Bass QPM 1.zip"><i class="fa fa-download"></i> 9U Bass Packet 1</a></li>
+    <li><a href="#" class="protected-link" data-password="a14" data-file="assets/files/QPM/9U Bass QPM 2.zip"><i class="fa fa-download"></i> 9U Bass Packet 2</a></li>
+
+    <!-- 9V Vocals -->
+    <li><a href="#" class="protected-link" data-password="b14" data-file="assets/files/QPM/9V Female QPM 1.zip"><i class="fa fa-download"></i> 9V Female Packet 1</a></li>
+    <li><a href="#" class="protected-link" data-password="a15" data-file="assets/files/QPM/9V Female QPM 2.zip"><i class="fa fa-download"></i> 9V Female Packet 2</a></li>
+    <li><a href="#" class="protected-link" data-password="b15" data-file="assets/files/QPM/9V Male QPM 1.zip"><i class="fa fa-download"></i> 9V Male Packet 1</a></li>
+  </ul>
+</div>
+                        
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+ <!-- BUTTONS -->
+
+ <style>
+    /* Style all buttons */
+    .btn {
+      background-color: #FFCC00 !important;  /* Army yellow */
+      color: #000 !important;                /* Black text for contrast */
+      border: none;
+      border-radius: 12px;                   /* Rounded corners */
+      padding: 12px 24px;                    /* Balanced size */
+      font-family: 'Roboto', sans-serif;     /* Army standard font */
+      font-weight: 700;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+  
+    /* Hover effect */
+    .btn:hover {
+      background-color: #e6b800 !important;  /* Darker Army yellow */
+      transform: translateY(-2px);
+    }
+  
+    /* Make sure contact form "SEND" button also matches */
+    .btn-contact {
+      background-color: #FFCC00 !important;
+      color: #000 !important;
+      border-radius: 12px;
+    }
+
+    
+  /* Template dropdown menu */
+  .template-dropdown {
+    min-width: 260px;
+    padding: 10px 12px;
+    text-align: left;
+  }
+  .template-dropdown > li > a {
+    margin: 6px 0;
+    border: 2px solid #000;
+    border-radius: 8px;
+    background: #FFCC00;
+    color: #000 !important;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    padding: 8px 12px;
+    transition: background-color .2s ease, transform .15s ease;
+  }
+  .template-dropdown > li > a:hover,
+  .template-dropdown > li > a:focus {
+    background: #e6b800;
+    color: #000 !important;
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+  .template-dropdown .dropdown-header {
+    font-weight: 700;
+    color: #555;
+    padding: 6px 12px 4px;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+  }
+  <style>
+  /* allow long dropdowns to scroll on mobile */
+  .template-dropdown {
+    max-height: 70vh;                 /* fit within the screen */
+    overflow-y: auto;                 /* scroll the menu itself */
+    -webkit-overflow-scrolling: touch;/* smooth iOS scrolling */
+    z-index: 1050;                    /* sit above neighbors */
+  }
+
+  /* make sure parents don't clip the menu */
+  .button-stack, 
+  .section-buttons, 
+  .dropdown, 
+  .btn-group {
+    overflow: visible !important;
+  }
+  <style>
+  @media (max-width: 400px) {
+    .template-dropdown > li > a {
+      padding: 8px 10px;
+      margin: 4px 0;
+      font-size: 14px;
+    }
+  }
+
+</style>
+  
+
+
+ <!-- END BUTTONS -->
+   
+<!-- ===== Embedded Video Section ===== -->
+<div class="video-container">
+  <iframe 
+    src="https://www.youtube.com/embed/2lO0EwFHfT4?si=Wz1CY-GF8T_VcrlM" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+  </iframe>
+
+
+</div>  <!-- ===== START FOOTER (Full-Width Contact Block) ===== -->
+<!-- ===== START FOOTER (Compact Version) ===== -->
+<footer class="footer-custom" role="contentinfo">
+  <div class="container text-center">
+    <h4 class="footer-title">CONTACT</h4>
+    <div class="separator line-separator">⌘</div>
+
+    <p class="footer-text">Army Bands Recruiting Branch</p>
+    <p class="footer-text">Phone: (502) 528-2100</p>
+    <p class="footer-text">
+      Email: 
+      <a href="mailto:youremail@example.com">owen.r.eddy.mil@army.mil</a>
+    </p>
+    <p class="footer-text">1307 3rd Ave Ft Knox, Ky 40121</p>
+
+    <p class="footer-copy">&copy; 2025</p>
+  </div>
+</footer>
+
+<!-- Footer Styles -->
+<style>
+  .footer-custom {
+    background: #FFCC00;          /* Army yellow */
+    padding: 20px 10px;           /* much smaller padding */
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+  }
+
+  .footer-title {
+    margin: 0 0 8px;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .footer-text {
+    margin: 2px 0;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .footer-text a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .footer-copy {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #333;
+  }
+
+  .line-separator {
+    margin: 6px auto 12px;
+  }
+</style>
+<!-- ===== END FOOTER ===== -->
+
+</body>
+   <!--   core js files    -->
+   <script src="assets/js/jquery-1.11.2.min.js" type="text/javascript"></script>
+   <script src="assets/js/bootstrap.js" type="text/javascript"></script>
+    
+    <!--   file for adding vertical points where we activate the elements animation   -->
+    <script type="text/javascript" src="assets/js/jquery.waypoints.min.js"></script>
+
+    <!--  js library for devices recognition -->
+    <script type="text/javascript" src="assets/js/modernizr.js"></script>
+    
+    <!--   file where we handle all the script from the Rubik page   -->
+    <script type="text/javascript" src="assets/js/rubick.js"></script>
+    
+    <!--  script for google maps     -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+
+
+<!-- ===== END FOOTER ===== -->
+<style>
+  /* Navbar link overrides */
+  .navbar-nav > li > a {
+    color: #000 !important;       /* Black text */
+    font-size: 18px !important;   /* Larger font size */
+    font-weight: 700;             /* Bold for visibility */
+    text-transform: uppercase;    /* Optional: make them ALL CAPS */
+  }
+
+  /* Brand name (ABRB) */
+  .navbar-brand {
+    color: #000 !important;       /* Black text */
+    font-size: 22px !important;   /* Larger brand text */
+    font-weight: 900;             /* Extra bold */
+  }
+
+  /* Hover effect */
+  .navbar-nav > li > a:hover,
+  .navbar-brand:hover {
+    color: #e6b800 !important;    /* Dark Army yellow on hover */
+    text-decoration: none;
+  }
+</style>
+</html>
