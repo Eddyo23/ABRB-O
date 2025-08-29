@@ -466,6 +466,40 @@
 </style>
 <!-- ===== END FOOTER ===== -->
 
+<script>
+    (function () {
+      function isMobile() { return window.innerWidth < 768; }
+    
+      // On open: promote menu to body as full-screen overlay
+      $(document).on('shown.bs.dropdown', '.dropdown', function () {
+        if (!isMobile()) return;
+        var $menu = $(this).find('.dropdown-menu').first();
+        // store where it came from
+        $menu.data('origin', this);
+        // move to body and style as overlay
+        $menu.appendTo('body').addClass('mobile-dropdown');
+      });
+    
+      // On close: return menu to its original dropdown
+      $(document).on('hide.bs.dropdown', '.dropdown', function () {
+        var $menu = $('ul.mobile-dropdown').first();
+        if ($menu.length && $menu.data('origin') === this) {
+          $menu.removeClass('mobile-dropdown').appendTo(this);
+        }
+      });
+    
+      // Safety: on resize, if we leave mobile, restore any moved menu
+      $(window).on('resize orientationchange', function () {
+        if (isMobile()) return;
+        var $menu = $('ul.mobile-dropdown');
+        if ($menu.length) {
+          var origin = $menu.data('origin');
+          $menu.removeClass('mobile-dropdown').appendTo(origin || document.body);
+        }
+      });
+    })();
+    </script>
+
 </body>
    <!--   core js files    -->
    <script src="assets/js/jquery-1.11.2.min.js" type="text/javascript"></script>

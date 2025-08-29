@@ -235,3 +235,33 @@
     .template-dropdown > li > a { padding: 8px 10px; margin: 4px 0; font-size: 14px; }
   }
 </style>
+
+/* Default dropdown list still scrollable on desktop */
+.template-dropdown {
+  max-height: 70vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 1050;
+}
+
+/* Mobile overlay style used only when JS adds .mobile-dropdown */
+@media (max-width: 767px) {
+  .mobile-dropdown {
+    position: fixed !important;
+    top: 56px;           /* adjust if your navbar height differs */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #fff;    /* readable background */
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    z-index: 2000;       /* above everything */
+  }
+
+  /* Prevent parent stacks from clipping */
+  .button-stack, .dropdown, .btn-group { overflow: visible !important; }
+}
