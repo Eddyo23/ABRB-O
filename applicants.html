@@ -12,7 +12,6 @@
   <link href="assets/css/bootstrap.css" rel="stylesheet" />
   <link href="assets/css/rubick.css" rel="stylesheet"/>
   <link href="assets/css/custom.css" rel="stylesheet"/>
-  <link href="assets/css/rubick.css" rel="stylesheet"/>
 <link href="assets/css/custom.css" rel="stylesheet"/> <!-- your overrides -->
 
   <!--     Fonts and icons     -->
@@ -366,7 +365,7 @@
     text-transform: uppercase;
     letter-spacing: .02em;
   }
-  <style>
+  
   /* allow long dropdowns to scroll on mobile */
   .template-dropdown {
     max-height: 70vh;                 /* fit within the screen */
@@ -520,27 +519,105 @@
 
 
 <!-- ===== END FOOTER ===== -->
+<!-- ===== END FOOTER ===== -->
+
+<!-- Keep all styles/scripts BEFORE </body> and in the right order -->
+
 <style>
-  /* Navbar link overrides */
+  /* Make long dropdowns scrollable (desktop + mobile baseline) */
+  .template-dropdown {
+    max-height: 70vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1050;
+  }
+
+  /* Prevent clipping by ancestors */
+  .button-stack, .section-buttons, .dropdown, .btn-group { overflow: visible !important; }
+
+  /* Full-screen, scrollable overlay on phones */
+  @media (max-width: 767px) {
+    .mobile-dropdown {
+      position: fixed !important;
+      /* top is set dynamically by JS to match your navbar height */
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      margin: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      background: #fff;
+      overflow-y: auto !important;
+      -webkit-overflow-scrolling: touch;
+      z-index: 2000;
+    }
+  }
+
+  /* Navbar link overrides (kept) */
   .navbar-nav > li > a {
-    color: #000 !important;       /* Black text */
-    font-size: 18px !important;   /* Larger font size */
-    font-weight: 700;             /* Bold for visibility */
-    text-transform: uppercase;    /* Optional: make them ALL CAPS */
+    color: #000 !important;
+    font-size: 18px !important;
+    font-weight: 700;
+    text-transform: uppercase;
   }
-
-  /* Brand name (ABRB) */
   .navbar-brand {
-    color: #000 !important;       /* Black text */
-    font-size: 22px !important;   /* Larger brand text */
-    font-weight: 900;             /* Extra bold */
+    color: #000 !important;
+    font-size: 22px !important;
+    font-weight: 900;
   }
-
-  /* Hover effect */
   .navbar-nav > li > a:hover,
   .navbar-brand:hover {
-    color: #e6b800 !important;    /* Dark Army yellow on hover */
+    color: #e6b800 !important;
     text-decoration: none;
   }
 </style>
+
+<!-- Core JS: jQuery must load before Bootstrap; both before any code that uses them -->
+<script src="assets/js/jquery-1.11.2.min.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/jquery.waypoints.min.js"></script>
+<script src="assets/js/modernizr.js"></script>
+<script src="assets/js/rubick.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+<!-- Mobile dropdown overlay logic (runs AFTER jQuery/Bootstrap are available) -->
+<script>
+  (function () {
+    function isMobile() { return window.innerWidth < 768; }
+
+    // On open: promote menu to body and size it under the fixed navbar
+    $(document).on('shown.bs.dropdown', '.dropdown', function () {
+      if (!isMobile()) return;
+      var $menu = $(this).find('.dropdown-menu').first();
+      $menu.data('origin', this);
+
+      var navH = $('.navbar.navbar-fixed-top').outerHeight() || 56; // dynamic top offset
+      $menu
+        .appendTo('body')
+        .addClass('mobile-dropdown')
+        .css({ top: navH + 'px' });
+    });
+
+    // On close: restore to original dropdown and clean up inline styles
+    $(document).on('hide.bs.dropdown', '.dropdown', function () {
+      var $menu = $('ul.mobile-dropdown').first();
+      if ($menu.length && $menu.data('origin') === this) {
+        $menu.removeClass('mobile-dropdown').removeAttr('style').appendTo(this);
+      }
+    });
+
+    // On rotate/resize to desktop: restore any moved menu
+    $(window).on('resize orientationchange', function () {
+      if (isMobile()) return;
+      $('ul.mobile-dropdown').each(function () {
+        var $menu = $(this);
+        var origin = $menu.data('origin');
+        $menu.removeClass('mobile-dropdown').removeAttr('style').appendTo(origin || document.body);
+      });
+    });
+  })();
+</script>
+
+</body>
 </html>
