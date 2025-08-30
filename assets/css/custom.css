@@ -265,3 +265,16 @@
   /* Prevent parent stacks from clipping */
   .button-stack, .dropdown, .btn-group { overflow: visible !important; }
 }
+
+@media (max-width: 767px) {
+  .dropdown .dropdown-menu{
+    position: static;
+    float: none;
+    width: 100%;
+    margin: 8px 0 16px;
+    box-shadow: none;
+    left: auto; right: auto; transform: none;
+  }
+  .button-stack { padding: 0 12px; }
+  .template-dropdown { max-height: 60vh; }
+}
