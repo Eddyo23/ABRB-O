@@ -1,274 +1,106 @@
-/* === FOOTER VISIBILITY FIX (place after rubick.css) === */
+/* === FOOTER + THEME FIXES === */
 
-/* Establish a stacking context for the footer */
-.section-footer {
-    position: relative;
-  }
-  
-  /* Ensure the parallax wrappers in the footer are positioned and contained */
-  .section-footer .parallax,
-  .section-footer .pattern-image,
-  .section-footer .filter {
-    position: relative !important;
-    overflow: hidden;
-  }
-  
-  /* Background image sits at the very back */
-  .section-footer .parallax > img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0 !important;
-  }
-  
-  /* Kill or lighten theme overlays JUST in the footer */
-  .section-footer .pattern-image::after,
-  .section-footer .filter::before {
-    opacity: 0 !important;          /* set to 0.15 if you want some wash */
-    z-index: 1 !important;           /* keep these behind real content */
-    pointer-events: none !important; /* overlays never block clicks/text */
-  }
-  
-  /* Real footer content sits above everything */
-  .section-footer .footer-content,
-  .section-footer .contact-bar {
-    position: relative !important;
-    z-index: 5 !important;
-  }
-  
-  /* Full-width black contact bar styles */
-  .section-footer .contact-bar {
-    background: #000;
-    color: #fff !important;
-    padding: 25px 15px;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  /* Readable links on black */
-  .section-footer .contact-bar a {
-    color: #FFCC00 !important;       /* Army yellow */
-    text-decoration: underline;
-  }
-  
-  /* Optional: make the CONTACT heading/copyright readable on yellow */
-  .section-footer .footer-content h2 {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #000 !important;
-  }
-  .section-footer .footer-content .copyright {
-    margin: 20px 0 0;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    color: #000 !important;
-  }
-  
-  /* Safety: if any theme class reduces opacity on animated elements */
-  .section-footer .add-animation,
-  .section-footer .add-animation * {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  /* Remove header darkening/tint so the yellow image stays true */
-.section-header .pattern-image::after { 
-    opacity: 0 !important; 
-    background: none !important; 
-  }
-  
-  .section-header .filter::before { 
-    opacity: 0 !important; 
-    background: none !important; 
-  }
-  
-  /* Make all “gold” accents use Army yellow */
-  .separator-container .separator,
-  .separator-container .separator.line-separator:before,
-  .separator-container .separator.line-separator:after {
-    color: #FFCC00 !important;
-    border-color: #FFCC00 !important;
-  }
-  
-  /* Optional: navbar hover/active accent to Army yellow too */
-  .navbar-default .navbar-nav > .active > a,
-  .navbar-default .navbar-nav > li > a:hover,
-  .navbar-default .navbar-nav > li > a:focus,
-  .navbar-transparent .navbar-nav > .active > a:not(.btn),
-  .navbar-transparent .navbar-nav > li > a:hover:not(.btn),
-  .navbar-transparent .navbar-nav > li > a:focus:not(.btn) {
-    color: #FFCC00 !important;
-  }
-  
-  /* If you ever use the theme’s “gold” overlay class, retint it */
-  .filter.filter-color-gold:before { background: #FFCC00 !important; }
-
-  /* Reduce excessive vertical padding in sections */
-.section {
-  padding: 40px 0 !important;   /* instead of 100px+ */
+/* Footer stacking & overlays */
+.section-footer { position: relative; }
+.section-footer .parallax,
+.section-footer .pattern-image,
+.section-footer .filter { position: relative !important; overflow: hidden; }
+.section-footer .parallax > img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: 0 !important;
 }
-
-/* Ensure wrapper doesn’t push out page height */
-.wrapper {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+.section-footer .pattern-image::after,
+.section-footer .filter::before {
+  opacity: 0 !important;        /* set to 0.15 if you want a slight wash */
+  z-index: 1 !important; pointer-events: none !important;
 }
-
-/* Compact section-buttons */
-.section-buttons {
-  margin-bottom: 20px !important;
-  padding-bottom: 0 !important;
+.section-footer .footer-content,
+.section-footer .contact-bar { position: relative !important; z-index: 5 !important; }
+.section-footer .contact-bar {
+  background: #000; color: #fff !important; padding: 25px 15px;
+  text-align: center; font-family: 'Roboto', sans-serif;
 }
-
-/* Footer should sit right after content */
-.footer-custom {
-  margin-top: 0 !important;
+.section-footer .contact-bar a { color: #FFCC00 !important; text-decoration: underline; }
+.section-footer .footer-content h2,
+.section-footer .footer-content .copyright {
+  font-family: 'Roboto', sans-serif; color: #000 !important;
 }
+.section-footer .footer-content h2 { margin: 0; font-weight: 700; text-transform: uppercase; }
+.section-footer .footer-content .copyright { margin: 20px 0 0; font-weight: 500; }
 
-/* Stack buttons vertically */
-.button-stack .dropdown {
-  margin: 15px auto;   /* space between buttons */
-  display: block;
-  max-width: 300px;    /* optional: keep them neat */
+/* Header overlays off so yellow stays true */
+.section-header .pattern-image::after,
+.section-header .filter::before { opacity: 0 !important; background: none !important; }
+
+/* Army yellow accents */
+.separator-container .separator,
+.separator-container .separator.line-separator:before,
+.separator-container .separator.line-separator:after {
+  color: #FFCC00 !important; border-color: #FFCC00 !important;
 }
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-transparent .navbar-nav > .active > a:not(.btn),
+.navbar-transparent .navbar-nav > li > a:hover:not(.btn),
+.navbar-transparent .navbar-nav > li > a:focus:not(.btn) { color: #FFCC00 !important; }
+.filter.filter-color-gold:before { background: #FFCC00 !important; }
 
-/* Make the buttons full width */
-.button-stack .btn {
-  width: 100%;
-  display: block;
+/* Spacing trims */
+.section { padding: 40px 0 !important; }
+.wrapper { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+.section-buttons { margin-bottom: 20px !important; padding-bottom: 0 !important; }
+.footer-custom { margin-top: 0 !important; }
+
+/* === BUTTONS === */
+.btn {
+  background-color: #FFCC00 !important;
+  color: #000 !important;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  transition: background-color .3s ease, transform .2s ease;
 }
+.btn:hover { background-color: #e6b800 !important; transform: translateY(-2px); }
+.btn-contact { background-color: #FFCC00 !important; color: #000 !important; border-radius: 12px; }
 
-.video-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px auto;
-  max-width: 900px;
-}
+/* Button stack */
+.button-stack .dropdown { margin: 15px auto; display: block; max-width: 300px; }
+.button-stack .btn { width: 100%; display: block; }
 
-.video-container iframe {
-  width: 100%;
-  max-width: 560px; /* typical YouTube width */
-  height: 315px;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
+/* === DROPDOWNS === */
 
-<style>
-  /* Button look/feel (unchanged) */
-  .btn {
-    background-color: #FFCC00 !important;
-    color: #000 !important;
-    border: none;
-    border-radius: 12px;
-    padding: 12px 24px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    transition: background-color .3s ease, transform .2s ease;
-  }
-  .btn:hover { background-color: #e6b800 !important; transform: translateY(-2px); }
-  .btn-contact { background-color: #FFCC00 !important; color: #000 !important; border-radius: 12px; }
-
-  /* Base dropdown styling */
-  .template-dropdown {
-    min-width: 260px;
-    padding: 10px 12px;
-    text-align: left;
-    z-index: 1050; /* above neighbors */
-    max-height: 70vh;         /* long lists scroll */
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .template-dropdown > li > a {
-    margin: 6px 0;
-    border: 2px solid #000;
-    border-radius: 8px;
-    background: #FFCC00;
-    color: #000 !important;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    padding: 8px 12px;
-    transition: background-color .2s ease, transform .15s ease;
-    white-space: normal; /* allow wrapping */
-  }
-  .template-dropdown > li > a:hover,
-  .template-dropdown > li > a:focus {
-    background: #e6b800;
-    color: #000 !important;
-    transform: translateY(-1px);
-    text-decoration: none;
-  }
-  .template-dropdown .dropdown-header {
-    font-weight: 700;
-    color: #555;
-    padding: 6px 12px 4px;
-    text-transform: uppercase;
-    letter-spacing: .02em;
-  }
-
-  /* Make sure ancestors don't clip */
-  .button-stack, .section-buttons, .dropdown, .btn-group { overflow: visible !important; }
-
-  /* MOBILE BEHAVIOR: keep menus on-screen */
-  @media (max-width: 767px) {
-    /* Let menus flow in the normal document layout so they can't overflow left/right */
-    .dropdown .dropdown-menu {
-      position: static;   /* was absolute */
-      float: none;
-      width: 100%;
-      margin: 8px 0 16px;
-      box-shadow: none;
-      left: auto; right: auto;  /* reset */
-      transform: none;
-    }
-    /* Give the stack a little side padding so the menu isn't flush to edges */
-    .button-stack { padding: 0 12px; }
-    .template-dropdown { max-height: 60vh; }
-  }
-
-  /* Small phones: slightly tighter list items */
-  @media (max-width: 400px) {
-    .template-dropdown > li > a { padding: 8px 10px; margin: 4px 0; font-size: 14px; }
-  }
-</style>
-
-/* Default dropdown list still scrollable on desktop */
+/* Base dropdown look */
 .template-dropdown {
-  max-height: 70vh;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  z-index: 1050;
+  min-width: 260px; padding: 10px 12px; text-align: left; z-index: 1050;
+  max-height: 70vh; overflow-y: auto; -webkit-overflow-scrolling: touch;
+}
+.template-dropdown > li > a {
+  margin: 6px 0; border: 2px solid #000; border-radius: 8px;
+  background: #FFCC00; color: #000 !important;
+  font-family: 'Roboto', sans-serif; font-weight: 700;
+  padding: 8px 12px; transition: background-color .2s ease, transform .15s ease;
+  white-space: normal; /* allow wrapping */
+}
+.template-dropdown > li > a:hover,
+.template-dropdown > li > a:focus {
+  background: #e6b800; color: #000 !important;
+  transform: translateY(-1px); text-decoration: none;
+}
+.template-dropdown .dropdown-header {
+  font-weight: 700; color: #555; padding: 6px 12px 4px;
+  text-transform: uppercase; letter-spacing: .02em;
 }
 
-/* Mobile overlay style used only when JS adds .mobile-dropdown */
-@media (max-width: 767px) {
-  .mobile-dropdown {
-    position: fixed !important;
-    top: 56px;           /* adjust if your navbar height differs */
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    margin: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    background: #fff;    /* readable background */
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch;
-    z-index: 2000;       /* above everything */
-  }
+/* Prevent ancestors clipping */
+.button-stack, .section-buttons, .dropdown, .btn-group { overflow: visible !important; }
 
-  /* Prevent parent stacks from clipping */
-  .button-stack, .dropdown, .btn-group { overflow: visible !important; }
-}
-
+/* === MOBILE BEHAVIOR (CSS-only) === */
 @media (max-width: 767px) {
-  .dropdown .dropdown-menu{
-    position: static;
+  .dropdown .dropdown-menu {
+    position: static;       /* flow with page */
     float: none;
     width: 100%;
     margin: 8px 0 16px;
@@ -276,5 +108,20 @@
     left: auto; right: auto; transform: none;
   }
   .button-stack { padding: 0 12px; }
-  .template-dropdown { max-height: 60vh; }
+  .template-dropdown { max-height: 60vh; } /* still scrollable */
+}
+
+/* Tiny phones: tighter items */
+@media (max-width: 400px) {
+  .template-dropdown > li > a { padding: 8px 10px; margin: 4px 0; font-size: 14px; }
+}
+
+/* === VIDEO EMBED === */
+.video-container {
+  display: flex; justify-content: center; align-items: center;
+  margin: 40px auto; max-width: 900px;
+}
+.video-container iframe {
+  width: 100%; max-width: 560px; height: 315px;
+  border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
