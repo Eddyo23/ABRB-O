@@ -125,3 +125,26 @@
   width: 100%; max-width: 560px; height: 315px;
   border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
+
+/* --- Bootstrap compatibility guards for static mobile menus --- */
+@media (max-width: 767px) {
+  /* 1) Kill iOS backdrop so it doesn't cover the static menu */
+  .dropdown-backdrop { display: none !important; }
+
+  /* 2) Beat Bootstrap's .navbar-right specificity */
+  .navbar-right .dropdown-menu,
+  .dropdown .dropdown-menu {
+    position: static !important;
+    float: none !important;
+    width: 100% !important;
+    margin: 8px 0 16px !important;
+    left: auto !important;
+    right: auto !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  /* 3) If anything above the menu has a high z-index, keep the stack sane */
+  .button-stack,
+  .dropdown { position: relative; z-index: 1001; }
+}
