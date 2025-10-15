@@ -28,6 +28,8 @@
 .section-footer .footer-content h2 { margin: 0; font-weight: 700; text-transform: uppercase; }
 .section-footer .footer-content .copyright { margin: 20px 0 0; font-weight: 500; }
 
+
+
 /* Header overlays off so yellow stays true */
 .section-header .pattern-image::after,
 .section-header .filter::before { opacity: 0 !important; background: none !important; }
@@ -147,4 +149,43 @@
   /* 3) If anything above the menu has a high z-index, keep the stack sane */
   .button-stack,
   .dropdown { position: relative; z-index: 1001; }
+}
+/* === Compact Header Overrides (keep at end) === */
+/* Remove extra vertical padding the theme adds */
+.section.section-header { padding: 0 !important; }
+
+/* Fix the visible header height */
+.section-header .parallax {
+  height: 220px !important;        /* ← adjust this number to taste */
+  min-height: 0 !important;
+  position: relative;
+}
+
+/* Make the header image fill that fixed height cleanly */
+.section-header .parallax > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                /* crop instead of squish */
+  object-position: center;
+}
+
+/* Trim inner content spacing */
+.section-header .content { padding: 16px 0 !important; margin: 0 !important; }
+.section-header .content h1,
+.section-header .content h5,
+.section-header .content p { margin: 0 !important; }
+
+/* Optional: hide the separator in the header so it doesn't add height */
+.section-header .separator-container { display: none !important; }
+
+/* Keep the yellow image untinted (theme sometimes adds overlays) */
+.section-header .pattern-image::after,
+.section-header .filter::before {
+  opacity: 0 !important;
+  background: none !important;
+}
+
+/* On phones, make it a touch shorter */
+@media (max-width: 767px) {
+  .section-header .parallax { height: 160px !important; }
 }

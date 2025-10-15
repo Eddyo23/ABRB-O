@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>ABRB-SMD</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+
+  <!-- Core CSS -->
+  <link href="assets/css/bootstrap.css" rel="stylesheet" />
+  <link href="assets/css/rubick.css" rel="stylesheet"/>
+  <link href="assets/css/custom.css" rel="stylesheet"/>
+
+  <!-- Fonts & Icons -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap" rel="stylesheet">
+  <link href="assets/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
+
+  <!-- Page-specific styles -->
+  <style>
+    /* Buttons */
+    .btn {
+      background-color: #FFCC00 !important;
+      color: #000 !important;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 24px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      transition: background-color .3s ease, transform .2s ease;
+    }
+    .btn:hover { background-color: #e6b800 !important; transform: translateY(-2px); }
+    .btn-contact { background-color:#FFCC00 !important; color:#000 !important; border-radius:12px; }
+
+    /* Dropdown look */
+    .template-dropdown {
+      min-width: 260px;
+      padding: 10px 12px;
+      text-align: left;
+      max-height: 70vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      z-index: 1050;
+    }
+    .template-dropdown > li > a {
+      margin: 6px 0;
+      border: 2px solid #000;
+      border-radius: 8px;
+      background: #FFCC00;
+      color: #000 !important;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      padding: 8px 12px;
+      transition: background-color .2s ease, transform .15s ease;
+      white-space: normal; /* allow wrapping on small screens */
+    }
+    .template-dropdown > li > a:hover,
+    .template-dropdown > li > a:focus {
+      background:#e6b800; color:#000 !important; transform: translateY(-1px); text-decoration:none;
+    }
+    .template-dropdown .dropdown-header {
+      font-weight:700; color:#555; padding:6px 12px 4px; text-transform:uppercase; letter-spacing:.02em;
+    }
+
+    /* Prevent ancestors clipping menus */
+    .button-stack, .section-buttons, .dropdown, .btn-group { overflow: visible !important; }
+
+    /* Mobile: fullscreen overlay for any open dropdown (class added by JS) */
+    @media (max-width: 767px) {
+      .mobile-dropdown {
+        position: fixed !important;
+        /* top set dynamically by JS to fit below navbar */
+        left: 0; right: 0; bottom: 0;
+        width: 100%;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: #fff;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+        z-index: 2000;
+      }
+    }
+
+    /* Small phones: slightly tighter items */
+    @media (max-width: 400px) {
+      .template-dropdown > li > a { padding: 8px 10px; margin: 4px 0; font-size: 14px; }
+    }
+
+    /* Navbar overrides */
+    .navbar-nav > li > a {
+      color:#000 !important; font-size:18px !important; font-weight:700; text-transform:uppercase;
+    }
+    .navbar-brand { color:#000 !important; font-size:22px !important; font-weight:900; }
+    .navbar-nav > li > a:hover, .navbar-brand:hover { color:#e6b800 !important; text-decoration:none; }
+
+    /* Footer */
+    .footer-custom {
+      background:#FFCC00; padding:20px 10px; font-family:'Roboto', sans-serif; color:#000;
+    }
+    .footer-title { margin:0 0 8px; font-weight:700; font-size:20px; }
+    .footer-text { margin:2px 0; font-size:14px; font-weight:500; }
+    .footer-text a { color:#000; text-decoration: underline; }
+    .footer-copy { margin-top:10px; font-size:13px; font-weight:400; color:#333; }
+    .line-separator { margin:6px auto 12px; }
+    /* === Centered responsive image === */
+    .image-section { padding: 32px 0 56px; }
+    .image-wrapper { display: flex; justify-content: center; align-items: center; padding: 0 16px; }
+    .image-card { width: 100%; max-width: 1000px; background: #fff; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.12); overflow: hidden; }
+    .image-frame { display: block; width: 100%; height: auto; }
+
+    /* === Support form styling === */
+    .support-section { padding: 40px 0 80px; }
+    .support-section h3 { font-family: 'Roboto', sans-serif; font-weight: 700; margin-bottom: 24px; }
+    .support-form .form-group { margin-bottom: 16px; }
+    .support-form label { font-weight: 600; }
+    .support-form input, .support-form select { border-radius: 8px; border: 1px solid #ccc; padding: 10px 12px; width: 100%; }
+    .support-form .btn { margin-top: 12px; }
+  </style>
+</head>
+
+<body id="skrollr-body">
+  <div class="loading">
+    <div class="loading-container">
+      <p>Just a sec...</p>
+      <img class="loader" src="assets/img/rubik.svg"/>
+    </div>
+  </div>
+
+  
+
+  
+
+
+
+      
+
+<!-- Image -->
+<section class="image-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="image-wrapper">
+          <div class="image-card">
+            <img class="image-frame" src="assets/files/Program%20JPG.png" alt="Program" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Support Form -->
+<section class="support-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
+        <h3>Support this performance by letting us know you were here</h3>
+        <form id="supportForm" class="support-form" style="margin-top: 24px; text-align: left;" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="birthdate">Birthdate</label>
+            <input type="date" class="form-control" id="birthdate" name="birthdate" required>
+          </div>
+          <div class="form-group">
+            <label for="zip">ZIP Code</label>
+            <input type="text" class="form-control" id="zip" name="zip" placeholder="ZIP Code" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone number">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email address">
+          </div>
+          <div class="form-group">
+            <label for="education">Education Level</label>
+            <select class="form-control" id="education" name="education">
+              <option value="">Select</option>
+              <option>High School</option>
+              <option>Some College</option>
+              <option>Associate Degree</option>
+              <option>Bachelor's Degree</option>
+              <option>Master's Degree</option>
+              <option>Doctorate</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <input type="hidden" name="page" value="ABRB-SMD QRC">
+          <button type="submit" class="btn">Submit</button>
+          <div id="supportFormMsg" style="display:none; margin-top:12px;" class="alert" role="alert"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer-custom" role="contentinfo">
+      <div class="container text-center">
+        <h4 class="footer-title">CONTACT</h4>
+        <div class="separator line-separator">⌘</div>
+
+        <p class="footer-text">Army Bands Recruiting Branch</p>
+        <p class="footer-text">Phone: (502) 528-2100</p>
+        <p class="footer-text">
+          Email:
+          <a href="mailto:owen.r.eddy.mil@army.mil">owen.r.eddy.mil@army.mil</a>
+        </p>
+        <p class="footer-text">1307 3rd Ave Ft Knox, Ky 40121</p>
+
+        <p class="footer-copy">&copy; 2025</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Core JS (order matters) -->
+  <script src="assets/js/jquery-1.11.2.min.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/jquery.waypoints.min.js"></script>
+  <script src="assets/js/modernizr.js"></script>
+  <script src="assets/js/rubick.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+  
+
+  <!-- Password-protected link handler -->
+  <script>
+    (function () {
+      document.addEventListener("DOMContentLoaded", function () {
+        var links = document.querySelectorAll(".protected-link");
+        links.forEach(function (link) {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            var correctPassword = this.getAttribute("data-password");
+            var file = this.getAttribute("data-file");
+            var entered = prompt("Enter password for this packet:");
+            if (entered === null) return;
+            if (entered === correctPassword) {
+              window.location.href = file;
+            } else {
+              alert("Incorrect password. Please try again.");
+            }
+          });
+        });
+      });
+    })();
+  </script>
+
+  <script>
+    // === Form submission via Formspree (email notifications) ===
+    // 1) Create a Formspree form and replace YOUR_FORM_ID below.
+    //    https://formspree.io/  (Free tier available)
+    // 2) Optionally, set your email in Formspree dashboard to receive notifications.
+    (function() {
+      var form = document.getElementById('supportForm');
+      if (!form) return;
+      var msg = document.getElementById('supportFormMsg');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var endpoint = 'https://formspree.io/f/xzzjyvog'; // <- REPLACE with your Form ID
+        var formData = new FormData(form);
+
+        fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: formData
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          if (data && (data.ok || data.success || data.status === 'success')) {
+            msg.className = 'alert alert-success';
+            msg.textContent = 'Thanks! Your info has been submitted.';
+            msg.style.display = 'block';
+            form.reset();
+          } else {
+            throw new Error('Submission error');
+          }
+        })
+        .catch(function(err) {
+          msg.className = 'alert alert-danger';
+          msg.textContent = 'Sorry, something went wrong. Please try again.';
+          msg.style.display = 'block';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -104,6 +104,23 @@
     .footer-text a { color:#000; text-decoration: underline; }
     .footer-copy { margin-top:10px; font-size:13px; font-weight:400; color:#333; }
     .line-separator { margin:6px auto 12px; }
+
+    /* === Header & Title spacing tweaks === */
+    .section.section-header { padding: 10px 0 !important; }
+    .section.section-header .parallax { background: #fff !important; }
+    .section.section-header .parallax > img { display: none !important; }
+    .section.section-header .filter, 
+    .section.section-header .pattern-image, 
+    .section.section-header .filter::before, 
+    .section.section-header .pattern-image::after { background: none !important; box-shadow: none !important; opacity: 1 !important; }
+
+    /* Tighten title block spacing */
+    .section-we-are-1 .text-area { padding-top: 8px !important; padding-bottom: 8px !important; }
+    .section-we-are-1 .title { margin-top: 8px !important; margin-bottom: 8px !important; }
+    .section-we-are-1 .title .separator-container { margin: 8px auto !important; }
+
+    /* Optional: ensure navbar sits clean over white header */
+    .navbar.navbar-default.navbar-transparent { background: #fff !important; }
   </style>
 </head>
 
@@ -131,7 +148,6 @@
       <div id="example" class="navbar-scroll-to collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right abr-nav">
           <li><a href="index.html">HOME</a></li>
-          <li><a href="recruiters.html">RECRUITERS</a></li>
           <li><a href="music.html">MUSIC</a></li>
           <li><a href="applicants.html">APPLICANTS</a></li>
         </ul>
@@ -152,6 +168,7 @@
             <h5></h5>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -161,13 +178,10 @@
         <div class="container">
           <div class="row">
             <div class="title add-animation">
-              <p>&nbsp;</p>
               <h2>ARMY BANDS RECRUITING BRANCH<br> RESOURCES</h2>
               <div class="separator-container">
                 <div class="separator line-separator">⌘</div>
               </div>
-              <p>&nbsp;</p>
-              <p>&nbsp;</p>
             </div>
           </div>
         </div>
@@ -310,6 +324,47 @@
           </ul>
         </div>
 
+        <!-- QPM Passwords (protected reveal) -->
+        <div class="dropdown" style="margin-top:20px;">
+<button id="qpmPwBtn" class="btn btn-lg btn-black dropdown-toggle" type="button" aria-controls="qpmPwList" aria-expanded="false" aria-haspopup="true">
+  QPM Passwords <span class="caret"></span>
+</button>
+          <div id="qpmPwList" class="collapse" style="margin-top:20px; text-align:left;">
+            <ul>
+              <li>9B Trumpet 1 — Password: <strong>a1</strong></li>
+              <li>9B Trumpet 2 — Password: <strong>b1</strong></li>
+              <li>9C Euphonium 1 — Password: <strong>a2</strong></li>
+              <li>9C Euphonium 2 — Password: <strong>b2</strong></li>
+              <li>9D Horn 1 — Password: <strong>a3</strong></li>
+              <li>9D Horn 2 — Password: <strong>b3</strong></li>
+              <li>9E Bass Trombone 1 — Password: <strong>a4</strong></li>
+              <li>9E Tenor Trombone 2 — Password: <strong>b4</strong></li>
+              <li>9F Tuba 1 — Password: <strong>a5</strong></li>
+              <li>9F Tuba 2 — Password: <strong>b5</strong></li>
+              <li>9G Flute 1 — Password: <strong>a6</strong></li>
+              <li>9G Flute 2 — Password: <strong>b6</strong></li>
+              <li>9H Oboe 1 — Password: <strong>a7</strong></li>
+              <li>9H Oboe 2 — Password: <strong>b7</strong></li>
+              <li>9J Clarinet 1 — Password: <strong>a8</strong></li>
+              <li>9J Clarinet 2 — Password: <strong>b8</strong></li>
+              <li>9K Bassoon 1 — Password: <strong>a9</strong></li>
+              <li>9K Bassoon 2 — Password: <strong>b9</strong></li>
+              <li>9L Saxophone 1 — Password: <strong>a10</strong></li>
+              <li>9L Saxophone 2 — Password: <strong>b10</strong></li>
+              <li>9M Percussion 1 — Password: <strong>a11</strong></li>
+              <li>9M Percussion 2 — Password: <strong>b11</strong></li>
+              <li>9N Keyboard 1 — Password: <strong>a12</strong></li>
+              <li>9N Keyboard 2 — Password: <strong>b12</strong></li>
+              <li>9T Guitar 1 — Password: <strong>a13</strong></li>
+              <li>9U Bass 1 — Password: <strong>b13</strong></li>
+              <li>9U Bass 2 — Password: <strong>a14</strong></li>
+              <li>9V Female 1 — Password: <strong>b14</strong></li>
+              <li>9V Female 2 — Password: <strong>a15</strong></li>
+              <li>9V Male 1 — Password: <strong>b15</strong></li>
+            </ul>
+          </div>
+        </div>
+
         <!-- ASOM INFORMATION -->
         <div class="dropdown">
           <button class="btn btn-lg btn-black dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -383,6 +438,33 @@
             }
           });
         });
+      });
+    })();
+  </script>
+
+  <script>
+    // QPM Passwords button handler (requires password "letmein")
+    (function() {
+      var btn = document.getElementById('qpmPwBtn');
+      if (!btn) return;
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var entered = prompt('Enter password to view QPM passwords:');
+        if (entered === null) return;
+        if (entered === 'letmein') {
+          // Use Bootstrap collapse to toggle
+          if (window.jQuery && typeof jQuery.fn.collapse === 'function') {
+            jQuery('#qpmPwList').collapse('toggle');
+          } else {
+            // Fallback: simple show/hide
+            var list = document.getElementById('qpmPwList');
+            if (list) {
+              list.style.display = (list.style.display === 'block') ? 'none' : 'block';
+            }
+          }
+        } else {
+          alert('Incorrect password.');
+        }
       });
     })();
   </script>
