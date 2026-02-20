@@ -156,7 +156,7 @@
 
 /* Fix the visible header height */
 .section-header .parallax {
-  height: 220px !important;        /* ← adjust this number to taste */
+  height: 160px !important;        /* shorter header */
   min-height: 0 !important;
   position: relative;
 }
@@ -187,5 +187,5 @@
 
 /* On phones, make it a touch shorter */
 @media (max-width: 767px) {
-  .section-header .parallax { height: 160px !important; }
+  .section-header .parallax { height: 120px !important; }
 }
