@@ -120,6 +120,21 @@ window.bandContactsByState = [
     ]
   },
   {
+    "state": "Colorado",
+    "bands": [
+      {
+        "name": "101ST ARMY BAND",
+        "state": "Colorado",
+        "emails": [
+          "eric.a.roberts3.mil@army.mil",
+          "alisa.d.anderson2.mil@army.mil",
+          "kelsie.l.mccallum.mil@army.mil",
+          "jason.t.byrnes.mil@army.mil"
+        ]
+      }
+    ]
+  },
+  {
     "state": "Connecticut",
     "bands": [
       {
